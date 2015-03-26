@@ -15,4 +15,7 @@
 - (instancetype) initWithFrame:(CGRect)frame
                      pathScale:(CGFloat)pathScale;
 
++ (CursorButton *)cursorButton;
+
+
 @end

@@ -21,8 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-   
-    self.cursorBarButtonItem.customView = [self cursorButton];
+    [self setUp];
+}
+
+- (void)setUp {
+    CursorButton *cursorButton = [CursorButton cursorButton];
+    [cursorButton addTarget:self
+                     action:@selector(changeSelectState:)
+           forControlEvents:UIControlEventTouchUpInside];
+    self.cursorBarButtonItem.customView = cursorButton;
 }
 
 
@@ -42,9 +49,7 @@
                                                            pathScale:pathScale];
     
     cursorButton.on = NO;
-    [cursorButton addTarget:self
-                     action:@selector(changeSelectState:)
-           forControlEvents:UIControlEventTouchUpInside];
+
     return cursorButton;
 }
 

@@ -28,6 +28,36 @@
 
 @implementation CursorButton
 
+#pragma mark - Instancetype Method
+
+- (instancetype) initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    return self;
+}
+
+- (instancetype) initWithFrame:(CGRect)frame
+                     pathScale:(CGFloat)pathScale {
+    self = [self initWithFrame:frame];
+    _pathScale = pathScale;
+    return self;
+}
+
++ (CursorButton *)cursorButton {
+
+    //pathScale control the path scale, For example value 1 is full screen in the frame;
+    CGFloat pathScale = 0.5;
+    CursorButton *cursorButton = [[CursorButton alloc] initWithFrame:CGRectMake(0,
+                                                                                0,
+                                                                                44 * pathScale,
+                                                                                44)
+                                                           pathScale:pathScale];
+    
+    return cursorButton;
+}
+
+#pragma mark - Property Setter And Getter Method
+
+
 
 - (UIColor *)notFavoriteColor {
     return [UIColor grayColor];
@@ -43,18 +73,7 @@
     
 }
 
-
-- (instancetype) initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    return self;
-}
-
-- (instancetype) initWithFrame:(CGRect)frame
-                     pathScale:(CGFloat)pathScale {
-    self = [self initWithFrame:frame];
-    _pathScale = pathScale;
-    return self;
-}
+#pragma mark - Layout Method
 
 
 - (void)layoutSubviews {
