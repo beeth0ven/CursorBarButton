@@ -38,21 +38,6 @@
 }
 
 
-- (CursorButton *)cursorButton {
-    
-    //pathScale control the path scale, For example value 1 is full screen in the frame;
-    CGFloat pathScale = 0.5;
-    CursorButton *cursorButton = [[CursorButton alloc] initWithFrame:CGRectMake(0,
-                                                                                0,
-                                                                                44 * pathScale,
-                                                                                44)
-                                                           pathScale:pathScale];
-    
-    cursorButton.on = NO;
-
-    return cursorButton;
-}
-
 
 
 @end
